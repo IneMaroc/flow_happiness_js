@@ -1,0 +1,51 @@
+<svg width="126" height="140" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="142" width="128" y="-1" x="-1"/>
+ </g>
+
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_13"/>
+  <g id="svg_14"/>
+  <g id="svg_15"/>
+  <g id="svg_16"/>
+  <g id="svg_17"/>
+  <g id="svg_18"/>
+  <g id="svg_19"/>
+  <g id="svg_20"/>
+  <g id="svg_21"/>
+  <g id="svg_22"/>
+  <g id="svg_23"/>
+  <g id="svg_24"/>
+  <g id="svg_25"/>
+  <g id="svg_26"/>
+  <g id="svg_27"/>
+  <g id="svg_119" stroke="null">
+   <g id="svg_118" transform="matrix(0.2311197928220382,0,0,0.2311197928220382,-8516.265081309577,-9209.71372596458) " stroke="null">
+    <title transform="translate(0,4.326760768890381) ">Layer 1</title>
+    <g id="svg_111" stroke="null">
+     <path id="svg_114" fill="#444242" d="m37228.45345,39874.93368l-222.722,0c-90.516,0 -164.156,73.64 -164.156,164.156l0,222.722c0,90.516 73.64,164.156 164.156,164.156l222.722,0c90.516,0 164.156,-73.64 164.156,-164.156l0,-222.722c-0.001,-90.516 -73.641,-164.156 -164.156,-164.156zm108.722,386.878c0,60.045 -48.677,108.722 -108.722,108.722l-222.722,0c-60.045,0 -108.722,-48.677 -108.722,-108.722l0,-222.722c0,-60.046 48.677,-108.722 108.722,-108.722l222.722,0c60.045,0 108.722,48.676 108.722,108.722l0,222.722l0,0z" stroke="null"/>
+     <path id="svg_113" fill="#444242" d="m37117.09245,40007.93368c-78.584,0 -142.517,63.933 -142.517,142.516s63.933,142.517 142.517,142.517s142.517,-63.933 142.517,-142.517s-63.933,-142.516 -142.517,-142.516zm0,229.6c-48.095,0 -87.083,-38.988 -87.083,-87.083s38.989,-87.083 87.083,-87.083c48.095,0 87.083,38.988 87.083,87.083c0,48.094 -38.989,87.083 -87.083,87.083z" stroke="null"/>
+     <circle id="svg_112" fill="#444242" r="34.15" cy="40009.00368" cx="37259.88545"/>
+     <path id="svg_1" d="m95.5,12.11458" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="null" fill="#7f52ef"/>
+    </g>
+    <g id="svg_110" stroke="null"/>
+    <g id="svg_109" stroke="null"/>
+    <g id="svg_108" stroke="null"/>
+    <g id="svg_107" stroke="null"/>
+    <g id="svg_106" stroke="null"/>
+    <g id="svg_105" stroke="null"/>
+    <g id="svg_104" stroke="null"/>
+    <g id="svg_103" stroke="null"/>
+    <g id="svg_102" stroke="null"/>
+    <g id="svg_101" stroke="null"/>
+    <g id="svg_100" stroke="null"/>
+    <g id="svg_99" stroke="null"/>
+    <g id="svg_98" stroke="null"/>
+    <g id="svg_97" stroke="null"/>
+    <g id="svg_96" stroke="null"/>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,734 @@
+@import "reset";
+@import "variables";
+body {
+    margin: auto;
+    width: 100vw;
+    font-family: 'Raleway', sans-serif;
+    color: $tipogeneral;
+    font-size: 14px;
+    background-color: $fondogeneral;
+    transition: ease all .2s;
+    box-sizing: border-box;
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+    @include for-size(desktop-up) {
+        font-size: 15px;
+    }
+    @include for-size(big-desktop-up) {
+        font-size: 16px;
+    }
+}
+
+header {
+    position: sticky;
+    top: 0.1px;
+    h1 {
+        display: none;
+    }
+}
+
+
+/* Estilo bloque de navegación*/
+
+.navBlock {
+    z-index: 3;
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        background-color: $fondogeneral;
+        img {
+            width: 45%;
+            margin-left: 3em;
+            @include for-size(desktop-up) {
+                width: 50%;
+            }
+            @include for-size(big-desktop-up) {
+                width: 65%;
+            }
+        }
+        ul {
+            display: none;
+            @include for-size(tablet-landscape-up) {
+                display: inline-block;
+                list-style: none;
+                margin-right: 4em;
+                li {
+                    display: inline-block;
+                    color: #7F52EF;
+                    a {
+                        text-decoration: none;
+                        margin-left: 2em;
+                        padding-top: 3em;
+                        padding-bottom: 3em;
+                        transition: 0.4s ease-in-out;
+                        &.current {
+                            color: #c298e9;
+                        }
+                    }
+                    a:hover {
+                        color: #3EF4D6;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+            @include for-size(tablet-landscape-up) {
+                display: none;
+            }
+            &-content {
+                display: none;
+                position: absolute;
+                background-color: $fondogeneral;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 5;
+                .current {
+                    color: $especialv2;
+                }
+                a {
+                    color: $especialv;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                    font-size: 0.9em;
+                }
+                a:hover {
+                    background-color: $especialt1;
+                }
+            }
+            .dropbtn {
+                margin-right: 3em;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                background-color: transparent;
+            }
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    }
+}
+
+
+/* Estilo Boton Reserva y modal de reserva */
+
+#myBtn {
+    display: block;
+    float: none;
+    position: fixed;
+    right: -2px;
+    top: 32%;
+    display: block;
+    z-index: 2;
+    border: none;
+    outline: none;
+    background: transparent;
+     :hover {
+        transform: scale(1.2);
+        transition: transform .5s ease-in-out;
+        cursor: pointer;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+    &-content {
+        position: relative;
+        background-color: $fondogeneral;
+        margin: auto;
+        border: 1px solid $tipogeneral;
+        width: 80%;
+        height: 80%;
+        .iframe {
+            position: absolute;
+            top: 1em;
+            bottom: 1em;
+            right: 1em;
+            left: 1em;
+            width: 95%;
+            height: 95%;
+        }
+        .close {
+            color: $tipogeneral;
+            float: right;
+            font-weight: bold;
+            z-index: 4;
+            padding: 0.5em;
+        }
+        .close:hover,
+         :focus {
+            color: $tipogeneral;
+            background-color: $especialv1;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* INICIO*/
+
+.inicio {
+    background: url("../diseno/imginicio/mainimageoptimizada.jpg") no-repeat 55% 90%;
+    background-size: cover;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+
+/* MARCOS*/
+
+.deco1 {
+    grid-area: marco1;
+    background-color: $especialt;
+}
+
+.deco2 {
+    grid-area: marco2;
+    background-color: $especialt;
+    h2 {
+        color: $especialv1;
+        text-align: center;
+    }
+}
+
+.deco3 {
+    grid-area: marco3;
+    background-color: $especialv;
+}
+
+.deco4 {
+    grid-area: marco4;
+    background-color: $especialv;
+}
+
+
+/*CLASES*/
+
+.sectionClases {
+    display: grid;
+    grid-template-areas: "marco1 marco2 marco4" "marco1 horario marco4" "marco1 galeria1 marco4" "marco1 contenido marco4" "marco1 galeria2 marco4" "marco1 marco3 marco4";
+    grid-template-columns: 2.5em auto 2.5em;
+    grid-template-rows: 2em auto auto auto auto 2em;
+    @include for-size(tablet-landscape-up) {
+        grid-template-areas: "marco1 galeria1 marco2 galeria2 marco4" "marco1 galeria1 horario galeria2 marco4" "marco1 galeria1 contenido galeria2 marco4" "marco1 galeria1 marco3 galeria2 marco4";
+        grid-template-columns: 3em 13em auto 13em 3em;
+        grid-template-rows: 2em auto auto 2em;
+    }
+    &__galeria1 {
+        grid-area: galeria1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-weight: 500;
+        margin-top: 2em;
+        @include for-size(tablet-landscape-up) {
+            margin-top: 0;
+        }
+        .no {
+            display: none;
+            @include for-size(tablet-landscape-up) {
+                display: block;
+            }
+        }
+        img {
+            width: 80%;
+            padding: 1em;
+        }
+        p {
+            font-weight: 800;
+            @include for-size(tablet-landscape-up) {
+                font-weight: 500;
+                padding-top: 0;
+                padding-bottom: 3em;
+            }
+        }
+    }
+    &__galeria2 {
+        grid-area: galeria2;
+        margin-bottom: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-weight: 500;
+        @include for-size(tablet-landscape-up) {
+            margin-bottom: 0;
+        }
+        .no {
+            display: none;
+            @include for-size(tablet-landscape-up) {
+                display: block;
+            }
+        }
+        img {
+            width: 80%;
+            padding: 1em;
+        }
+        p {
+            font-weight: 800;
+            @include for-size(tablet-landscape-up) {
+                font-weight: 500;
+                padding-top: 3em;
+                padding-bottom: 0;
+            }
+        }
+    }
+    &__tabla {
+        grid-area: horario;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        table {
+            text-align: center;
+            letter-spacing: 0.2em;
+            width: 80%;
+            margin: 1em;
+            thead,
+            tfoot {
+                background-color: $fondooscuro;
+                color: $especialv;
+                th {
+                    padding: 1em;
+                }
+            }
+            tbody {
+                color: $especialv1;
+                border-spacing: 1em;
+                td {
+                    padding: 0.5em;
+                    background-color: $fondointermedio;
+                    color: $especialv1;
+                }
+            }
+        }
+    }
+    .boxesContainer {
+        grid-area: contenido;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        line-height: 150%;
+        @include for-size(tablet-landscape-up) {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        &__cardBox {
+            perspective: 800px;
+            transition: all 0.3s ease-in-out 0s;
+            @include for-size(tablet-portrait-up) {
+                width: 80%;
+                font-size: 1.5em;
+                line-height: 200%;
+                align-self: center;
+            }
+            @include for-size(tablet-landscape-up) {
+                width: 32%;
+                font-size: 0.8em;
+                line-height: 130%;
+            }
+            @include for-size(big-desktop-up) {
+                line-height: 150%;
+                font-size: 1.1em;
+                margin-bottom: 1.5em;
+                margin-top: 0.8em;
+            }
+            &__card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                position: relative;
+                background: $especialt1;
+                height: 23em;
+                transform-style: preserve-3d;
+                transition: transform 0.4s ease 0s;
+                box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2);
+                margin-bottom: 0.5em;
+                @include for-size(tablet-landscape-up) {
+                    height: 25.5em;
+                }
+                @include for-size(desktop-up) {
+                    height: 19.5em;
+                }
+                @include for-size(big-desktop-up) {
+                    height: 19.5em;
+                }
+                .front,
+                .back {
+                    position: absolute;
+                    backface-visibility: hidden;
+                    padding-top: 0.05em;
+                    align-self: center;
+                    text-align: center;
+                    color: $tipogeneral;
+                    background-color: $especialt1;
+                    h3 {
+                        color: $especialv1;
+                        padding: 1em;
+                    }
+                }
+                .front {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    padding: 0.5em;
+                }
+                .back {
+                    transform: rotateY( 180deg);
+                    p {
+                        padding: 1.5em 0.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.boxesContainer__cardBox:hover .boxesContainer__cardBox__card {
+    transform: rotateY( 180deg);
+}
+
+
+/*extra clases*/
+
+@keyframes giro {
+    from {
+        transform: rotateY( 180deg);
+    }
+    to {
+        transform: rotateY( 0deg);
+    }
+}
+
+
+/*TERAPIA FLORAL*/
+
+.terapiaFloral {
+    display: grid;
+    grid-template-areas: "marco1 marco2 marco4" "marco1 contenido marco4" "marco1 marco3 marco4";
+    grid-template-columns: 2.5em auto 2.5em;
+    grid-template-rows: 2em auto 2em;
+    .contenedor {
+        grid-area: contenido;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        @include for-size(tablet-portrait-up) {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .textosT {
+            padding: 0.5em;
+            @include for-size(tablet-portrait-up) {
+                width: 40vw;
+            }
+            p {
+                padding: 0.5em;
+                span {
+                    font-weight: bold;
+                    font-family: 'Cookie', cursive;
+                    font-size: 2em;
+                }
+            }
+            ul li {
+                padding: 0.5em;
+                list-style: inside;
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+        .imgT {
+            width: 90%;
+            height: 50vh;
+            background: url("../diseno/imgterapflor/tflorv.jpeg") no-repeat 42% 70%;
+            opacity: 0.8;
+            background-size: cover;
+            border-radius: 3%;
+            border: 0.5em solid $especialv2;
+            margin: 0.5em;
+            @include for-size(tablet-portrait-up) {
+                width: 40%;
+                margin: 1em;
+            }
+            @include for-size(tablet-landscape-up) {
+                width: 40%;
+                margin: 1em;
+            }
+            @include for-size(desktop-up) {
+                height: 51vh;
+                width: 40%;
+                margin: 1em;
+            }
+            @include for-size(big-desktop-up) {
+                height: 67.5vh;
+                width: 40%;
+                margin: 1em;
+            }
+        }
+    }
+}
+
+
+/*SOBRE MI*/
+
+.sobreMi__section {
+    &__contenedor {
+        display: grid;
+        grid-template-areas: "marco1 marco2 marco4" "marco1 contenido marco4" "marco1 marco3 marco4";
+        grid-template-columns: 2.5em auto 2.5em;
+        grid-template-rows: 2em auto 2em;
+        .cajasDeTextos {
+            width: 90%;
+            grid-area: contenido;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1em;
+            @include for-size(tablet-portrait-up) {
+                width: 100%;
+                padding: 0;
+            }
+            .cajaDeTexto1 {
+                @include for-size(tablet-portrait-up) {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    padding: 1em;
+                    .sobreMiImg {
+                        width: 300px;
+                    }
+                    .texto {
+                        width: 40%;
+                    }
+                }
+            }
+            .cajaDeTexto3 {
+                @include for-size(tablet-portrait-up) {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    padding: 1em;
+                    .sobreMiImg {
+                        width: 300px;
+                    }
+                    .texto {
+                        width: 40%;
+                    }
+                }
+            }
+            .cajaDeTexto5 {
+                @include for-size(tablet-portrait-up) {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    padding: 1em;
+                    .sobreMiImg {
+                        width: 300px;
+                    }
+                    .texto {
+                        width: 40%;
+                    }
+                }
+            }
+            .cajaDeTexto2 {
+                @include for-size(tablet-portrait-up) {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    padding: 1em;
+                    .sobreMiImg {
+                        width: 300px;
+                    }
+                    .texto {
+                        position: relative;
+                        width: 40%;
+                    }
+                }
+            }
+            .cajaDeTexto4 {
+                @include for-size(tablet-portrait-up) {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    padding: 1em;
+                    .sobreMiImg {
+                        width: 300px;
+                    }
+                    .texto {
+                        width: 40%;
+                    }
+                }
+            }
+            p {
+                width: 100%;
+                text-align: left;
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+                span {
+                    font-weight: bold;
+                }
+            }
+            img {
+                width: 100%;
+                padding-top: 1em;
+                padding-bottom: 1em;
+                @include for-size(tablet-portrait-up) {
+                    padding: 0;
+                }
+            }
+        }
+        .especialp {
+            font-family: 'Cookie', cursive;
+            font-weight: bolder;
+            font-size: 2em;
+            grid-area: contenido;
+            bottom: 0.5em;
+            text-align: right;
+        }
+    }
+}
+
+
+/*CONTACTO*/
+
+.contacto {
+    display: grid;
+    grid-template-areas: "marco1 marco2 marco4" "marco1 contenido marco4" "marco1 marco3 marco4";
+    grid-template-columns: 2.5em auto 2.5em;
+    grid-template-rows: 2em auto 2em;
+    &__contenedor {
+        grid-area: contenido;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        @include for-size(tablet-portrait-up) {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        &__formulario {
+            width: 100%;
+            form {
+                width: 90%;
+                padding: 0.5em;
+                border-radius: 0.5em;
+                max-width: 42.10em;
+                min-width: 21.05em;
+                @include for-size(tablet-portrait-up) {
+                    width: 40vw;
+                    margin-left: 5vw;
+                }
+                label {
+                    font-weight: 500;
+                }
+                input {
+                    width: 100%;
+                    padding: 0.5em;
+                    border-radius: 0.5em;
+                    border: none;
+                    box-sizing: border-box;
+                    background-color: $fondooscuro;
+                }
+                textarea {
+                    max-height: 500px;
+                    min-height: 70px;
+                    max-width: 100%;
+                    min-width: 100%;
+                    border-radius: 0.5em;
+                    border: none;
+                    background-color: $fondooscuro;
+                }
+            }
+        }
+        &__localizacion {
+            padding: 0.5em;
+            iframe {
+                width: 100%;
+                height: 300PX;
+                border: 0;
+                @include for-size(tablet-portrait-up) {
+                    width: 40vw;
+                    height: 59vh;
+                }
+                @include for-size(tablet-landscape-up) {
+                    width: 40vw;
+                    height: 59vh;
+                }
+                @include for-size(big-desktop-up) {
+                    height: 70.5vh;
+                }
+            }
+        }
+    }
+}
+
+#boton {
+    font-weight: bold;
+    background-color: $especialv1;
+    color: $especialt1;
+    text-align: center;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+}
+
+#boton:hover {
+    font-weight: bold;
+    background-color: $especialt1;
+    color: $especialv1;
+    cursor: pointer;
+}
+
+
+/* FOOTER*/
+
+.footerBlock {
+    position: sticky;
+    bottom: 0.01px;
+    width: 100%;
+    text-align: center;
+    background-color: $fondogeneral;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    a {
+        text-decoration: none;
+        margin: 0.5;
+    }
+    .redesSociales img {
+        width: 8%;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+        @include for-size(tablet-portrait-up) {
+            width: 5%;
+        }
+    }
+}
