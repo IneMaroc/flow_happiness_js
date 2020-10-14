@@ -62,19 +62,49 @@
 
     </header>
 
-    <div class="btnModal">
+    <!-- Trigger/Open The Modal -->
 
-        <!-- Trigger/Open The Modal -->
+    <button id="myBtn" class="btnReserva"><img src="diseno/agendatuclasecolor.svg" alt="Agenda tu clase en FLOW HAPPINESS ~ AGUS MAROCCHI con Setmore ACA" /></button>
 
-        <button id="myBtn"><img src="diseno/agendatuclasecolor.svg" alt="Agenda tu clase en FLOW HAPPINESS ~ AGUS MAROCCHI con Setmore ACA" /></button>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="reserva__contenedor">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <iframe src="https://my.setmore.com/bookingpage/bca10be7-0adc-4f48-9327-5539482a7923" class="iframe" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <div id="btns" class="reserva__botones">
+                    <button> Yoga Fusión Martes </button>
+                    <button> Yoga Fusión Jueves </button>
+                    <button> Yin Yoga </button>
+                    <button> Caminata + Yoga </button>
+                    <button> Zumba + Relax </button>
+                </div>
+
+                <hr>
+
+                <div id="form" class="reserva__formulario">
+                    <form action="#">
+                        <label for="name">Nombre:</label>
+                        <input type="text" name="name" id="name" required>
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" name="apellido" id="apellido" required>
+                        <label for="dni">Documento:</label>
+                        <input type="text" name="dni" id="dni" placeholder="sin puntos ni espacios" required>
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" name="email" id="email" required>
+                        <label for="tel">Teléfono:</label>
+                        <input type="text" name="tel" id="tel" placeholder="sin guiones ni espacios" required>
+                        <label for="fechaClase">Fecha de Clase Reservada:</label>
+                        <input type="date" name="fechaclase" id="fechaclase" required>
+
+
+                    </form>
+
+                    <button> Reservar Otra Clase</button>
+                    <button> Enviar Reserva </button>
+                </div>
             </div>
         </div>
 

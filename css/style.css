@@ -105,7 +105,7 @@ header {
       display: block; }
 
 /* Estilo Boton Reserva y modal de reserva */
-#myBtn {
+.btnReserva {
   display: block;
   float: none;
   position: fixed;
@@ -116,7 +116,7 @@ header {
   border: none;
   outline: none;
   background: transparent; }
-  #myBtn :hover {
+  .btnReserva :hover {
     transform: scale(1.2);
     transition: transform .5s ease-in-out;
     cursor: pointer; }
