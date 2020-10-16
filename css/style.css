@@ -111,7 +111,6 @@ header {
   position: fixed;
   right: -2px;
   top: 32%;
-  display: block;
   z-index: 2;
   border: none;
   outline: none;
@@ -144,45 +143,43 @@ header {
       justify-content: center;
       align-items: center;
       height: 90%; }
-      .modal-content .reserva__contenedor #btnsClases {
-        width: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap; }
-        .modal-content .reserva__contenedor #btnsClases .btn {
-          font-weight: bold;
-          background-color: #BDF4D6;
-          color: #7F52EF;
-          cursor: pointer;
-          padding: 1em;
-          border: none;
-          outline: none;
-          margin: 0.2em; }
-          .modal-content .reserva__contenedor #btnsClases .btn:hover {
-            transform: scale(1.1);
-            transition: transform .5s ease-in-out;
-            background-color: #BDF4D6; }
-      .modal-content .reserva__contenedor #formulario,
-      .modal-content .reserva__contenedor #formulario1 {
+      .modal-content .reserva__contenedor #formulario {
         width: 90%;
         padding: 0.5em;
         border-radius: 0.5em;
         max-width: 42.10em;
         min-width: 21.05em; }
-        .modal-content .reserva__contenedor #formulario label,
-        .modal-content .reserva__contenedor #formulario1 label {
+        .modal-content .reserva__contenedor #formulario label {
           font-weight: 500; }
-        .modal-content .reserva__contenedor #formulario input,
-        .modal-content .reserva__contenedor #formulario1 input {
+        .modal-content .reserva__contenedor #formulario input {
           width: 100%;
           padding: 0.5em;
           border-radius: 0.5em;
           border: none;
           box-sizing: border-box;
-          background-color: #d6d3d3; }
-        .modal-content .reserva__contenedor #formulario .bt,
-        .modal-content .reserva__contenedor #formulario1 .bt {
+          background-color: #d6d3d3;
+          text-align: center; }
+        .modal-content .reserva__contenedor #formulario #btnsClases {
+          width: 90%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          margin: 1em; }
+          .modal-content .reserva__contenedor #formulario #btnsClases .btn {
+            font-weight: bold;
+            background-color: #BDF4D6;
+            color: #7F52EF;
+            cursor: pointer;
+            padding: 1em;
+            border: none;
+            outline: none;
+            margin: 0.2em; }
+            .modal-content .reserva__contenedor #formulario #btnsClases .btn:hover {
+              transform: scale(1.05);
+              transition: transform .5s ease-in-out;
+              background-color: #d6d3d3; }
+        .modal-content .reserva__contenedor #formulario #btFin > .bt {
           align: center;
           font-weight: bold;
           background-color: #7F52EF;
@@ -194,8 +191,7 @@ header {
           padding: 0.5em;
           border: none;
           outline: none; }
-          .modal-content .reserva__contenedor #formulario .bt:hover,
-          .modal-content .reserva__contenedor #formulario1 .bt:hover {
+          .modal-content .reserva__contenedor #formulario #btFin > .bt:hover {
             font-weight: bold;
             background-color: #BDF4D6;
             color: #7F52EF;
@@ -214,7 +210,7 @@ header {
       font-weight: bold;
       font-size: 2em;
       z-index: 4;
-      padding: 0.5em; }
+      padding: 0.1em; }
     .modal-content .close:hover,
     .modal-content :focus {
       color: #333;
