@@ -80,86 +80,165 @@ arrayClases.push(clase1, clase2, clase3, clase4, clase5);
 
 console.table(arrayClases);
 
-//alumno
-var alumno = new Alumnos(nombre = document.querySelector("#name").value,
-    apellido = document.querySelector("#apellido").value,
-    dni = parseInt(document.querySelector("#dni").value),
-    mail = document.querySelector("#email").value,
-    tel = parseInt(document.querySelector("#tel").value)
-);
+// variables alumno
+var alumno = [];
+var nombre = "";
+var apellido = "";
+var dni = 0;
+var mail = "";
+var tel = 0;
 
-arrayAlumnos.push(alumno);
+// variables botones clases
 
-console.table(arrayAlumnos);
+var ym = document.querySelector(".yM");
+var yj = document.querySelector(".yJ");
+var yy = document.querySelector(".yY");
+var cy = document.querySelector(".cY");
+var zr = document.querySelector(".zR");
 
 
+ym.onclick = function() {
 
-if (claseElegida == "yoga fusion martes" && arrayReserva0.length < 50) {
+    if (arrayReserva0.length < 50) {
 
-    numeroDeReserva = (numeroDeReserva + 1);
+        numeroDeReserva = (numeroDeReserva + 1);
 
-    arrayReserva0.push(new Reserva(clase = arrayClases[0],
-        alumno = arrayAlumnos.push(new Alumnos(nombre = document.querySelector("#name"),
-            apellido = document.querySelector("#apellido"),
-            dni = parseInt(document.querySelector("#dni")),
-            mail = document.querySelector("#email"),
-            tel = parseInt(document.querySelector("#tel"))
-        )), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaclase = document.querySelector("fechaClase")), numeroReserva = numeroDeReserva
-    ));
+        arrayReserva0.push(new Reserva(clase = arrayClases[0],
+            alumno = new Alumnos(nombre = document.querySelector("#name").value,
+                apellido = document.querySelector("#apellido").value,
+                dni = parseInt(document.querySelector("#dni").value),
+                mail = document.querySelector("#email").value,
+                tel = parseInt(document.querySelector("#tel").value)
+            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
+        ));
 
-} else if (claseElegida == "yoga fusion jueves" && arrayReserva1.length < 50) {
+        arrayAlumnos.push(alumno);
 
-    numeroDeReserva = (numeroDeReserva + 1);
+    } else {
+        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
 
-    arrayReserva1.push(new Reserva(clase = arrayClases[1],
-        alumno = arrayAlumnos.push(new Alumnos(nombre = document.querySelector("#name"),
-            apellido = document.querySelector("#apellido"),
-            dni = parseInt(document.querySelector("#dni")),
-            mail = document.querySelector("#email"),
-            tel = parseInt(document.querySelector("#tel"))
-        )), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaclase = document.querySelector("fechaClase")), numeroReserva = numeroDeReserva
-    ));
+    };
 
-} else if (claseElegida == "yin yoga" && (arrayReserva2.length < 50)) {
 
-    numeroDeReserva = (numeroDeReserva + 1);
+    console.table(arrayAlumnos);
 
-    arrayReserva2.push(new Reserva(clase = arrayClases[2],
-        alumno = arrayAlumnos.push(new Alumnos(nombre = document.querySelector("#name"),
-            apellido = document.querySelector("#apellido"),
-            dni = parseInt(document.querySelector("#dni")),
-            mail = document.querySelector("#email"),
-            tel = parseInt(document.querySelector("#tel"))
-        )), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaclase = document.querySelector("fechaClase")), numeroReserva = numeroDeReserva
-    ));
+    console.table(arrayReserva0);
+};
 
-} else if (claseElegida == "caminata + yoga" && arrayReserva3.length < 10) {
+yj.onclick = function() {
 
-    numeroDeReserva = (numeroDeReserva + 1);
+    if (arrayReserva1.length < 50) {
 
-    arrayReserva3.push(new Reserva(clase = arrayClases[3],
-        alumno = arrayAlumnos.push(new Alumnos(nombre = document.querySelector("#name"),
-            apellido = document.querySelector("#apellido"),
-            dni = parseInt(document.querySelector("#dni")),
-            mail = document.querySelector("#email"),
-            tel = parseInt(document.querySelector("#tel"))
-        )), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaclase = document.querySelector("fechaClase")), numeroReserva = numeroDeReserva
-    ));
+        numeroDeReserva = (numeroDeReserva + 1);
 
-} else if (claseElegida == "zumba + relax" && arrayReserva4.length < 50) {
+        arrayReserva1.push(new Reserva(clase = arrayClases[1],
+            alumno = new Alumnos(nombre = document.querySelector("#name").value,
+                apellido = document.querySelector("#apellido").value,
+                dni = parseInt(document.querySelector("#dni").value),
+                mail = document.querySelector("#email").value,
+                tel = parseInt(document.querySelector("#tel").value)
+            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
+        ));
 
-    numeroDeReserva = (numeroDeReserva + 1);
+        arrayAlumnos.push(alumno);
 
-    arrayReserva4.push(new Reserva(clase = arrayClases[4],
-        alumno = arrayAlumnos.push(new Alumnos(nombre = document.querySelector("#name"),
-            apellido = document.querySelector("#apellido"),
-            dni = parseInt(document.querySelector("#dni")),
-            mail = document.querySelector("#email"),
-            tel = parseInt(document.querySelector("#tel"))
-        )), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaclase = document.querySelector("fechaClase")), numeroReserva = numeroDeReserva
-    ));
+    } else {
+        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
 
-} else {
-    alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
+    };
+
+
+    console.table(arrayAlumnos);
+
+    console.table(arrayReserva1);
+
+};
+
+yy.onclick = function() {
+
+    if (arrayReserva2.length < 50) {
+
+        numeroDeReserva = (numeroDeReserva + 1);
+
+        arrayReserva2.push(new Reserva(clase = arrayClases[2],
+            alumno = new Alumnos(nombre = document.querySelector("#name").value,
+                apellido = document.querySelector("#apellido").value,
+                dni = parseInt(document.querySelector("#dni").value),
+                mail = document.querySelector("#email").value,
+                tel = parseInt(document.querySelector("#tel").value)
+            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
+        ));
+
+        arrayAlumnos.push(alumno);
+
+    } else {
+        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
+
+    };
+
+
+    console.table(arrayAlumnos);
+
+    console.table(arrayReserva2);
+
+};
+
+cy.onclick = function() {
+
+    if (arrayReserva3.length < 10) {
+
+        numeroDeReserva = (numeroDeReserva + 1);
+
+        arrayReserva3.push(new Reserva(clase = arrayClases[3],
+            alumno = new Alumnos(nombre = document.querySelector("#name").value,
+                apellido = document.querySelector("#apellido").value,
+                dni = parseInt(document.querySelector("#dni").value),
+                mail = document.querySelector("#email").value,
+                tel = parseInt(document.querySelector("#tel").value)
+            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
+        ));
+
+        arrayAlumnos.push(alumno);
+
+    } else {
+        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
+
+    };
+
+
+    console.table(arrayAlumnos);
+
+    console.log(fechaClase);
+
+    console.table(arrayReserva3);
+
+
+};
+
+zr.onclick = function() {
+
+    if (arrayReserva4.length < 50) {
+
+        numeroDeReserva = (numeroDeReserva + 1);
+
+        arrayReserva4.push(new Reserva(clase = arrayClases[4],
+            alumno = new Alumnos(nombre = document.querySelector("#name"),
+                apellido = document.querySelector("#apellido"),
+                dni = parseInt(document.querySelector("#dni")),
+                mail = document.querySelector("#email"),
+                tel = parseInt(document.querySelector("#tel"))
+            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
+        ));
+
+        arrayAlumnos.push(alumno);
+
+    } else {
+        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera desde el formulario de contacto");
+
+    };
+
+    console.table(arrayAlumnos);
+
+    console.table(arrayReserva4);
 
 };
