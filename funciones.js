@@ -57,16 +57,6 @@ function Reserva(clase, alumno, fechaDeReserva, fechaDeClase, numeroReserva) {
     this.numeroReserva = numeroReserva;
 };
 
-
-
-//Clases predefinidas
-var clase1 = new Clases("Yoga Fusion Martes", "Martes", "19 a 20:30", 50, 500);
-var clase2 = new Clases("Yoga Fusion Jueves", "Jueves", "19 a 20:30", 50, 500);
-var clase3 = new Clases("Yin Yoga", "Miércoles", "19 a 20:30", 50, 500);
-var clase4 = new Clases("Caminata + Yoga", "Sábados", "10 a 11:30", 10, 500);
-var clase5 = new Clases("Zumba + Relax", "Lunes", "19 a 20:30", 50, 500);
-
-
 var arrayClases = [];
 
 var arrayAlumnos = [];
@@ -77,17 +67,32 @@ var arrayReserva2 = [];
 var arrayReserva3 = [];
 var arrayReserva4 = [];
 
+var numeroDeReserva = 0; // se le suma 1 por cada reserva
+
+//Clases predefinidas
+var clase1 = new Clases("Yoga Fusion Martes", "Martes", "19 a 20:30", 50, 500);
+var clase2 = new Clases("Yoga Fusion Jueves", "Jueves", "19 a 20:30", 50, 500);
+var clase3 = new Clases("Yin Yoga", "Miércoles", "19 a 20:30", 50, 500);
+var clase4 = new Clases("Caminata + Yoga", "Sábados", "10 a 11:30", 10, 500);
+var clase5 = new Clases("Zumba + Relax", "Lunes", "19 a 20:30", 50, 500);
 
 arrayClases.push(clase1, clase2, clase3, clase4, clase5);
 
 console.table(arrayClases);
 
-var numeroDeReserva = 0; // se le suma 1 por cada reserva
+//alumno
+var alumno = new Alumnos(nombre = document.querySelector("#name").value,
+    apellido = document.querySelector("#apellido").value,
+    dni = parseInt(document.querySelector("#dni").value),
+    mail = document.querySelector("#email").value,
+    tel = parseInt(document.querySelector("#tel").value)
+);
 
-//PROVISORIO hasta tener los botones
-var claseElegida = document.querySelector("#clase").value;
+arrayAlumnos.push(alumno);
 
-console.table(claseElegida);
+console.table(arrayAlumnos);
+
+
 
 if (claseElegida == "yoga fusion martes" && arrayReserva0.length < 50) {
 

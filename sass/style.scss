@@ -156,6 +156,73 @@ header {
         border: 1px solid $tipogeneral;
         width: 80%;
         height: 80%;
+        .reserva__contenedor {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+            #btnsClases {
+                width: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                .btn {
+                    font-weight: bold;
+                    background-color: $especialt1;
+                    color: $especialv1;
+                    cursor: pointer;
+                    padding: 1em;
+                    border: none;
+                    outline: none;
+                    margin: 0.2em;
+                    &:hover {
+                        transform: scale(1.1);
+                        transition: transform .5s ease-in-out;
+                        background-color: $especialt1;
+                    }
+                }
+            }
+            #formulario,
+            #formulario1 {
+                width: 90%;
+                padding: 0.5em;
+                border-radius: 0.5em;
+                max-width: 42.10em;
+                min-width: 21.05em;
+                label {
+                    font-weight: 500;
+                }
+                input {
+                    width: 100%;
+                    padding: 0.5em;
+                    border-radius: 0.5em;
+                    border: none;
+                    box-sizing: border-box;
+                    background-color: $fondooscuro;
+                }
+                .bt {
+                    align: center;
+                    font-weight: bold;
+                    background-color: $especialv1;
+                    color: $especialt1;
+                    text-align: center;
+                    border-radius: 0.5em;
+                    margin-bottom: 1em;
+                    margin-top: 1em;
+                    padding: 0.5em;
+                    border: none;
+                    outline: none;
+                    &:hover {
+                        font-weight: bold;
+                        background-color: $especialt1;
+                        color: $especialv1;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
         .iframe {
             position: absolute;
             top: 1em;
@@ -169,6 +236,7 @@ header {
             color: $tipogeneral;
             float: right;
             font-weight: bold;
+            font-size: 2em;
             z-index: 4;
             padding: 0.5em;
         }

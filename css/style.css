@@ -138,6 +138,68 @@ header {
     border: 1px solid #333;
     width: 80%;
     height: 80%; }
+    .modal-content .reserva__contenedor {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90%; }
+      .modal-content .reserva__contenedor #btnsClases {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; }
+        .modal-content .reserva__contenedor #btnsClases .btn {
+          font-weight: bold;
+          background-color: #BDF4D6;
+          color: #7F52EF;
+          cursor: pointer;
+          padding: 1em;
+          border: none;
+          outline: none;
+          margin: 0.2em; }
+          .modal-content .reserva__contenedor #btnsClases .btn:hover {
+            transform: scale(1.1);
+            transition: transform .5s ease-in-out;
+            background-color: #BDF4D6; }
+      .modal-content .reserva__contenedor #formulario,
+      .modal-content .reserva__contenedor #formulario1 {
+        width: 90%;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        max-width: 42.10em;
+        min-width: 21.05em; }
+        .modal-content .reserva__contenedor #formulario label,
+        .modal-content .reserva__contenedor #formulario1 label {
+          font-weight: 500; }
+        .modal-content .reserva__contenedor #formulario input,
+        .modal-content .reserva__contenedor #formulario1 input {
+          width: 100%;
+          padding: 0.5em;
+          border-radius: 0.5em;
+          border: none;
+          box-sizing: border-box;
+          background-color: #d6d3d3; }
+        .modal-content .reserva__contenedor #formulario .bt,
+        .modal-content .reserva__contenedor #formulario1 .bt {
+          align: center;
+          font-weight: bold;
+          background-color: #7F52EF;
+          color: #BDF4D6;
+          text-align: center;
+          border-radius: 0.5em;
+          margin-bottom: 1em;
+          margin-top: 1em;
+          padding: 0.5em;
+          border: none;
+          outline: none; }
+          .modal-content .reserva__contenedor #formulario .bt:hover,
+          .modal-content .reserva__contenedor #formulario1 .bt:hover {
+            font-weight: bold;
+            background-color: #BDF4D6;
+            color: #7F52EF;
+            cursor: pointer; }
     .modal-content .iframe {
       position: absolute;
       top: 1em;
@@ -150,6 +212,7 @@ header {
       color: #333;
       float: right;
       font-weight: bold;
+      font-size: 2em;
       z-index: 4;
       padding: 0.5em; }
     .modal-content .close:hover,

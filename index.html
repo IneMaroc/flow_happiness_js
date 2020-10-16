@@ -76,18 +76,8 @@
                 <span class="close">&times;</span>
                 <div class="reserva__contenedor">
 
-                    <div id="btns" class="reserva__botones">
-                        <button> Yoga Fusión Martes </button>
-                        <button> Yoga Fusión Jueves </button>
-                        <button> Yin Yoga </button>
-                        <button> Caminata + Yoga </button>
-                        <button> Zumba + Relax </button>
-                    </div>
-
-                    <hr>
-
-                    <div id="form" class="reserva__formulario">
-                        <form action="#">
+                    <div id="formulario">
+                        <form class="form" action="#">
                             <label for="name">Nombre:</label>
                             <input type="text" name="name" id="name" required>
                             <label for="apellido">Apellido:</label>
@@ -98,45 +88,71 @@
                             <input type="email" name="email" id="email" required>
                             <label for="tel">Teléfono:</label>
                             <input type="text" name="tel" id="tel" placeholder="sin guiones ni espacios" required>
-                            <label for="fechaClase">Fecha de Clase Reservada:</label>
-                            <input type="date" name="fechaclase" id="fechaclase" required>
+
 
 
                         </form>
 
-                        <button> Reservar Otra Clase</button>
-                        <button> Enviar Reserva </button>
+                        <button class="next bt"> Continuar</button>
+                        <button class="clear bt"> Limpiar </button>
+
                     </div>
+
+                    <hr>
+
+                    <div id="btnsClases">
+                        <button class="yM btn"> Yoga Fusión Martes </button>
+                        <button class="yJ btn"> Yoga Fusión Jueves </button>
+                        <button class="yY btn"> Yin Yoga </button>
+                        <button class="cY btn"> Caminata + Yoga </button>
+                        <button class="zR btn"> Zumba + Relax </button>
+                    </div>
+
+                    <hr>
+                    <div id="formulario1">
+                        <form action="" class="form1">
+                            <label for="fechaClase">Fecha de Clase Reservada:</label>
+                            <input type="date" name="fechaclase" id="fechaclase" required>
+
+                        </form>
+
+                        <button class="another bt"> Reservar Otra Clase</button>
+                        <button type="submit" Class="submit bt"> Enviar Reserva </button>
+                    </div>
+
+                    <hr>
+
+
                 </div>
             </div>
 
         </div>
+    </div>
+
+
+    <main class="inicio">
+
+        <!-- Acá está la imagen principal-->
 
 
 
-        <main class="inicio">
+    </main>
 
-            <!-- Acá está la imagen principal-->
+    <footer class="footerBlock">
 
+        <a title="FlowHappiness" href="index.html"><img src="diseno/imginicio/iconovioleta.svg" alt="icono"></a>
+        <div class="redesSociales">
+            <a href="https://www.facebook.com/flowhappiness/"> <img src="diseno/facebook126x136-gris.svg" alt="Facebook"> </a>
+            <a href="contacto.html"><img src="diseno/correo117x131-gris.svg" alt="Contacto"></a>
+            <a href="https://www.instagram.com/flow_happiness/?hl=es-la"><img src="diseno/instagram126x136-gris.svg" alt="Instagram"></a>
 
+        </div>
+        <a title="FlowHappiness" href="index.html"><img src="diseno/imginicio/iconoturquesa.svg" alt="icono"></a>
 
-        </main>
+    </footer>
 
-        <footer class="footerBlock">
-
-            <a title="FlowHappiness" href="index.html"><img src="diseno/imginicio/iconovioleta.svg" alt="icono"></a>
-            <div class="redesSociales">
-                <a href="https://www.facebook.com/flowhappiness/"> <img src="diseno/facebook126x136-gris.svg" alt="Facebook"> </a>
-                <a href="contacto.html"><img src="diseno/correo117x131-gris.svg" alt="Contacto"></a>
-                <a href="https://www.instagram.com/flow_happiness/?hl=es-la"><img src="diseno/instagram126x136-gris.svg" alt="Instagram"></a>
-
-            </div>
-            <a title="FlowHappiness" href="index.html"><img src="diseno/imginicio/iconoturquesa.svg" alt="icono"></a>
-
-        </footer>
-
-        <!-- SCRIPTS NO TOCAR -->
-        <script src="funciones.js"></script>
+    <!-- SCRIPTS NO TOCAR -->
+    <script src="funciones.js"></script>
 
 </body>
 
