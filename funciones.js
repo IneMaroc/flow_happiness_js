@@ -61,15 +61,11 @@ var arrayClases = [];
 
 var arrayAlumnos = [];
 
-var arrayReserva0 = [];
-var arrayReserva1 = [];
-var arrayReserva2 = [];
-var arrayReserva3 = [];
-var arrayReserva4 = [];
+var arrayReserva = [];
 
 var numeroDeReserva = 0; // se le suma 1 por cada reserva
 
-//Clases predefinidas
+//Variables Clases predefinidas
 var clase1 = new Clases("Yoga Fusion Martes", "Martes", "19 a 20:30", 50, 500);
 var clase2 = new Clases("Yoga Fusion Jueves", "Jueves", "19 a 20:30", 50, 500);
 var clase3 = new Clases("Yin Yoga", "Miércoles", "19 a 20:30", 50, 500);
@@ -96,21 +92,39 @@ var yy = document.querySelector(".yY");
 var cy = document.querySelector(".cY");
 var zr = document.querySelector(".zR");
 
+// variables fechas
+
+var str = "18/10/2020";
+
+//funciones fechas
+
+function sumarDias(fecha, dias) {
+    fecha.setDate(fecha.getDate() + dias);
+    return fecha;
+};
+
+//funcion localStorage
+
+
+
+//funciones reserva
 
 ym.onclick = function() {
 
-    if (arrayReserva0.length < 50) {
+    str = document.querySelector("#fechaClase").value;
+    console.log(str); //cuando la paso como parametro de new Date me resta un dia
+
+    if (arrayReserva.length < 50) {
 
         numeroDeReserva = (numeroDeReserva + 1);
 
-        arrayReserva0.push(new Reserva(clase = arrayClases[0],
+        arrayReserva.push(new Reserva(clase = arrayClases[0],
             alumno = new Alumnos(nombre = document.querySelector("#name").value,
                 apellido = document.querySelector("#apellido").value,
                 dni = parseInt(document.querySelector("#dni").value),
                 mail = document.querySelector("#email").value,
                 tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
-        ));
+            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva));
 
         arrayAlumnos.push(alumno);
 
@@ -122,51 +136,71 @@ ym.onclick = function() {
 
     console.table(arrayAlumnos);
 
-    console.table(arrayReserva0);
+    console.table(arrayReserva);
+
+    /*console.log(sumarDias(fechaDeClase, +7));
+    console.log(sumarDias(fechaDeClase, +15));*/
+
+    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+
+    console.log(reserva);
+
 };
 
 yj.onclick = function() {
 
-    if (arrayReserva1.length < 50) {
+    str = document.querySelector("#fechaClase").value;
+    console.log(str);
+
+    if (arrayReserva.length < 50) {
 
         numeroDeReserva = (numeroDeReserva + 1);
 
-        arrayReserva1.push(new Reserva(clase = arrayClases[1],
+        arrayReserva.push(new Reserva(clase = arrayClases[1],
             alumno = new Alumnos(nombre = document.querySelector("#name").value,
                 apellido = document.querySelector("#apellido").value,
                 dni = parseInt(document.querySelector("#dni").value),
                 mail = document.querySelector("#email").value,
                 tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
+            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva
         ));
 
         arrayAlumnos.push(alumno);
 
     } else {
         alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
-
     };
 
 
     console.table(arrayAlumnos);
 
-    console.table(arrayReserva1);
+    console.table(arrayReserva);
+
+    /*console.log(sumarDias(fechaDeClase, +7));
+    console.log(sumarDias(fechaDeClase, +15));*/
+
+    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+
+    console.log(reserva);
 
 };
 
 yy.onclick = function() {
 
-    if (arrayReserva2.length < 50) {
+    str = document.querySelector("#fechaClase").value;
+    console.log(str);
+
+    if (arrayReserva.length < 50) {
 
         numeroDeReserva = (numeroDeReserva + 1);
 
-        arrayReserva2.push(new Reserva(clase = arrayClases[2],
+        arrayReserva.push(new Reserva(clase = arrayClases[2],
             alumno = new Alumnos(nombre = document.querySelector("#name").value,
                 apellido = document.querySelector("#apellido").value,
                 dni = parseInt(document.querySelector("#dni").value),
                 mail = document.querySelector("#email").value,
                 tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
+            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva
         ));
 
         arrayAlumnos.push(alumno);
@@ -179,23 +213,33 @@ yy.onclick = function() {
 
     console.table(arrayAlumnos);
 
-    console.table(arrayReserva2);
+    console.table(arrayReserva);
+
+    /*console.log(sumarDias(fechaDeClase, +7));
+    console.log(sumarDias(fechaDeClase, +15));*/
+
+    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+
+    console.log(reserva);
 
 };
 
 cy.onclick = function() {
 
-    if (arrayReserva3.length < 10) {
+    str = document.querySelector("#fechaClase").value;
+    console.log(str);
+
+    if (arrayReserva.length < 10) {
 
         numeroDeReserva = (numeroDeReserva + 1);
 
-        arrayReserva3.push(new Reserva(clase = arrayClases[3],
+        arrayReserva.push(new Reserva(clase = arrayClases[3],
             alumno = new Alumnos(nombre = document.querySelector("#name").value,
                 apellido = document.querySelector("#apellido").value,
                 dni = parseInt(document.querySelector("#dni").value),
                 mail = document.querySelector("#email").value,
                 tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
+            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva
         ));
 
         arrayAlumnos.push(alumno);
@@ -210,24 +254,34 @@ cy.onclick = function() {
 
     console.log(fechaClase);
 
-    console.table(arrayReserva3);
+    console.table(arrayReserva);
+
+    /*console.log(sumarDias(fechaDeClase, +7));
+    console.log(sumarDias(fechaDeClase, +15));*/
+
+    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+
+    console.log(reserva);
 
 
 };
 
 zr.onclick = function() {
 
-    if (arrayReserva4.length < 50) {
+    str = document.querySelector("#fechaClase").value;
+    console.log(str);
+
+    if (arrayReserva.length < 50) {
 
         numeroDeReserva = (numeroDeReserva + 1);
 
-        arrayReserva4.push(new Reserva(clase = arrayClases[4],
+        arrayReserva.push(new Reserva(clase = arrayClases[4],
             alumno = new Alumnos(nombre = document.querySelector("#name"),
                 apellido = document.querySelector("#apellido"),
                 dni = parseInt(document.querySelector("#dni")),
                 mail = document.querySelector("#email"),
                 tel = parseInt(document.querySelector("#tel"))
-            ), fechaDeReserva = new Date(), fechaDeClase = new Date(fechaClase = document.querySelector("#fechaClase").value), numeroReserva = numeroDeReserva
+            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva
         ));
 
         arrayAlumnos.push(alumno);
@@ -239,6 +293,15 @@ zr.onclick = function() {
 
     console.table(arrayAlumnos);
 
-    console.table(arrayReserva4);
+    console.table(arrayReserva);
+
+    /*console.log(sumarDias(fechaDeClase, +7));
+    console.log(sumarDias(fechaDeClase, +15));*/
+
+    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+
+    console.log(reserva);
 
 };
+
+console.log(JSON.stringify(arrayClases));
