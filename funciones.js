@@ -1,4 +1,4 @@
-//MODALRESERVA - desafio eventos
+//MODALRESERVA // no logro pasarlo a jQuery -->
 
 // Get the modal
 var modal = document.querySelector("#myModal");
@@ -25,6 +25,9 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+
 
 ///////////////////////////////////////////////////////////
 
@@ -84,14 +87,14 @@ var dni = 0;
 var mail = "";
 var tel = 0;
 
-// variables botones clases
-
+// variables botones clases - se incluye jQuery no hacen falta
+/*
 var ym = document.querySelector(".yM");
 var yj = document.querySelector(".yJ");
 var yy = document.querySelector(".yY");
 var cy = document.querySelector(".cY");
 var zr = document.querySelector(".zR");
-
+*/
 // variables fechas
 
 var str = "18/10/2020";
@@ -106,10 +109,9 @@ function sumarDias(fecha, dias) {
 //funcion localStorage
 
 
-
 //funciones reserva
 
-ym.onclick = function() {
+$(".yM").click(function() {
 
     str = document.querySelector("#fechaClase").value;
     console.log(str); //cuando la paso como parametro de new Date me resta un dia
@@ -145,9 +147,9 @@ ym.onclick = function() {
 
     console.log(reserva);
 
-};
+});
 
-yj.onclick = function() {
+$(".yJ").click(function() {
 
     str = document.querySelector("#fechaClase").value;
     console.log(str);
@@ -183,9 +185,9 @@ yj.onclick = function() {
 
     console.log(reserva);
 
-};
+});
 
-yy.onclick = function() {
+$(".yY").click(function() {
 
     str = document.querySelector("#fechaClase").value;
     console.log(str);
@@ -222,9 +224,9 @@ yy.onclick = function() {
 
     console.log(reserva);
 
-};
+});
 
-cy.onclick = function() {
+$(".cY").click(function() {
 
     str = document.querySelector("#fechaClase").value;
     console.log(str);
@@ -264,9 +266,9 @@ cy.onclick = function() {
     console.log(reserva);
 
 
-};
+});
 
-zr.onclick = function() {
+$(".zR").click(function() {
 
     str = document.querySelector("#fechaClase").value;
     console.log(str);
@@ -302,6 +304,6 @@ zr.onclick = function() {
 
     console.log(reserva);
 
-};
+});
 
 console.log(JSON.stringify(arrayClases));
