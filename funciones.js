@@ -1,33 +1,21 @@
-//MODALRESERVA // no logro pasarlo a jQuery -->
+//MODALRESERVA 
 
-// Get the modal
-var modal = document.querySelector("#myModal");
+$('#myBtn').click(function(event) {
+    $('#myModal').css('display', 'block');
 
-// Get the button that opens the modal
-var btn = document.querySelector("#myBtn");
+    //Get the screen height and width
+    var maskHeight = $(document).height();
+    var maskWidth = $(window).width();
 
-// Get the <span> element that closes the modal
-var span = document.querySelector(".close");
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-
-
+    //Set height and width to mask to fill up the whole screen
+    $('.modalMask').css({ 'width': maskWidth, 'height': maskHeight });
+});
+$('.close').click(function(event) {
+    $('#myModal').css('display', 'none');
+});
+$('.modalMask').click(function(event) {
+    $('#myModal').css('display', 'none');
+});
 
 ///////////////////////////////////////////////////////////
 
@@ -87,14 +75,7 @@ var dni = 0;
 var mail = "";
 var tel = 0;
 
-// variables botones clases - se incluye jQuery no hacen falta
-/*
-var ym = document.querySelector(".yM");
-var yj = document.querySelector(".yJ");
-var yy = document.querySelector(".yY");
-var cy = document.querySelector(".cY");
-var zr = document.querySelector(".zR");
-*/
+
 // variables fechas
 
 var str = "18/10/2020";

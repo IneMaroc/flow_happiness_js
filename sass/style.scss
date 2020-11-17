@@ -138,7 +138,7 @@ header {
     }
 }
 
-.modal {
+#myModal {
     display: none;
     position: fixed;
     z-index: 3;
@@ -147,14 +147,21 @@ header {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.4);
-    &-content {
+    .modalMask {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .content {
         position: relative;
         background-color: $fondogeneral;
+        z-index: 4;
         margin: auto;
         border: 1px solid $tipogeneral;
         width: 80%;
         height: 80%;
+        box-sizing: border-box;
         .reserva__contenedor {
             display: flex;
             flex-direction: column;
@@ -224,22 +231,14 @@ header {
                 }
             }
         }
-        .iframe {
-            position: absolute;
-            top: 1em;
-            bottom: 1em;
-            right: 1em;
-            left: 1em;
-            width: 95%;
-            height: 95%;
-        }
         .close {
+            position: absolute;
+            bottom: 0.001em;
+            right: 0.001em;
             color: $tipogeneral;
-            float: right;
             font-weight: bold;
-            font-size: 2em;
             z-index: 4;
-            padding: 0.1em;
+            padding: 0.5em;
         }
         .close:hover,
          :focus {
