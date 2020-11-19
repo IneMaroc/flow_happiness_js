@@ -150,6 +150,13 @@ header {
       align-items: center;
       height: 90%;
       padding: 2em; }
+      #myModal .content .reserva__contenedor #alertaDatos {
+        display: none;
+        width: 100%;
+        height: 2em;
+        text-align: center;
+        padding: 0.5em;
+        color: #7F52EF; }
       #myModal .content .reserva__contenedor #formulario {
         width: 90%;
         padding: 0.5em;
@@ -158,7 +165,7 @@ header {
         min-width: 21.05em; }
         #myModal .content .reserva__contenedor #formulario label {
           font-weight: 500; }
-        #myModal .content .reserva__contenedor #formulario input {
+        #myModal .content .reserva__contenedor #formulario form > input {
           width: 100%;
           padding: 0.5em;
           border-radius: 0.5em;
@@ -166,6 +173,13 @@ header {
           box-sizing: border-box;
           background-color: #d6d3d3;
           text-align: center; }
+        #myModal .content .reserva__contenedor #formulario .alertaClaseCompleta {
+          display: none;
+          width: 100%;
+          height: 2em;
+          text-align: center;
+          padding: 0.5em;
+          color: #7F52EF; }
         #myModal .content .reserva__contenedor #formulario #btnsClases {
           width: 90%;
           display: flex;
@@ -186,13 +200,16 @@ header {
               transform: scale(1.05);
               transition: transform .5s ease-in-out;
               background-color: #d6d3d3; }
+        #myModal .content .reserva__contenedor #formulario #btFin {
+          display: flex;
+          justify-content: space-evenly; }
         #myModal .content .reserva__contenedor #formulario #btFin > .bt {
           align: center;
           font-weight: bold;
           background-color: #7F52EF;
           color: #BDF4D6;
           text-align: center;
-          border-radius: 0.5em;
+          border-radius: 0.2em;
           margin-bottom: 1em;
           margin-top: 1em;
           padding: 0.5em;
