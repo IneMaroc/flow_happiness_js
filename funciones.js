@@ -3,11 +3,11 @@
 $('#myBtn').click(function(event) {
     $('#myModal').css('display', 'block');
 
-    //Get the screen height and width
+    //obtiene el alto y el ancho
     var maskHeight = $(document).height();
     var maskWidth = $(window).width();
 
-    //Set height and width to mask to fill up the whole screen
+    //Determina alto y ancho para cubrir la pantalla
     $('.modalMask').css({ 'width': maskWidth, 'height': maskHeight });
 });
 $('.close').click(function(event) {
@@ -40,21 +40,24 @@ function Alumnos(nombre, apellido, dni, mail, tel) {
 };
 
 //constructor Reserva
-function Reserva(clase, alumno, fechaDeReserva, fechaDeClase, numeroReserva) {
+function Reserva(clase, alumno, fechaDeReserva, fechaDeClase, numeroReservaDiario) {
     this.clase = clase;
     this.alumno = alumno;
     this.fechaDeReserva = fechaDeReserva;
     this.fechaDeClase = fechaDeClase;
-    this.numeroReserva = numeroReserva;
+    this.numeroReservaDiario = numeroReservaDiario;
+
 };
 
+var numeroDeReservaDiario = 0; // se le suma 1 por cada reserva
+
+
+// ARRAYS
 var arrayClases = [];
 
 var arrayAlumnos = [];
 
 var arrayReserva = [];
-
-var numeroDeReserva = 0; // se le suma 1 por cada reserva
 
 //Variables Clases predefinidas
 var clase1 = new Clases("Yoga Fusion Martes", "Martes", "19 a 20:30", 50, 500);
@@ -90,41 +93,135 @@ function sumarDias(fecha, dias) {
 //funcion localStorage
 
 
+//funciones validacion formulario
+
+var input1 = "";
+var input2 = "";
+var input3 = 0;
+var input4 = "";
+var input5 = 0;
+
+
+var validacion = false;
+
+function validarNombre(valor) {
+
+    if (valor == null || valor.length == 0) {
+
+        console.log("No dejar en blanco");
+        $('.alertaNombre').css('display', 'block');
+
+        return validacion = false;
+    } else {
+        $('.alertaNombre').css('display', 'none');
+        return validacion = true;
+    }
+};
+
+function validarApellido(valor) {
+
+    if (valor == null || valor.length == 0) {
+
+        console.log("No dejar en blanco");
+        $('.alertaApellido').css('display', 'block');
+        return validacion = false;
+    } else {
+        $('.alertaApellido').css('display', 'none');
+        return validacion = true;
+    }
+};
+
+function validarDocumento(valor) {
+
+    if (valor == null || valor.length == 0 || (isNaN(valor))) {
+        console.log("No dejar en blanco, escribir solo números");
+        $('.alertaDocumento').css('display', 'block');
+        return validacion = false;
+    } else {
+        $('.alertaDocumento').css('display', 'none');
+        return validacion = true;
+
+    }
+};
+
+function validarCorreo(valor) {
+
+    if (valor == null || valor.length == 0 || !(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(valor))) {
+
+        console.log("No has ingresado tu mail o el formato no es correcto");
+        $('.alertaCorreo').css('display', 'block');
+        return validacion = false;
+    } else {
+        $('.alertaCorreo').css('display', 'none');
+        return validacion = true;
+    }
+};
+
+function validarTelefono(valor) {
+
+    if (valor == null || valor.length == 0 || (isNaN(valor))) {
+        console.log("No dejar en blanco, escribir solo números");
+        $('.alertaTelefono').css('display', 'block');
+        $('#tel').css('border', 'solid $especialv1');
+        return validacion = false;
+    } else {
+        $('.alertaTelefono').css('display', 'none');
+        return validacion = true;
+    }
+};
+
+
 //funciones reserva
 
 $(".yM").click(function() {
 
+    $('.alertaClaseCompleta').css('display', 'none');
+
+    input1 = document.querySelector("#name").value.toLowerCase();
+    input2 = document.querySelector("#apellido").value.toLowerCase();
+    input3 = parseInt(document.querySelector("#dni").value);
+    input4 = document.querySelector("#email").value.toLowerCase();
+    input5 = parseInt(document.querySelector("#tel").value);
+
+    validarNombre(input1);
+    validarApellido(input2);
+    validarDocumento(input3);
+    validarCorreo(input4);
+    validarTelefono(input5);
+
+
     str = document.querySelector("#fechaClase").value;
-    console.log(str); //cuando la paso como parametro de new Date me resta un dia
+    //console.log(str); 
 
-    if (arrayReserva.length < 50) {
+    var yogaMartes = arrayReserva.filter(function(reservar) {
+        return reservar.clase.nombre === 'Yoga Fusion Martes';
+    });
+    //console.log(yogaMartes);
 
-        numeroDeReserva = (numeroDeReserva + 1);
+    if (yogaMartes.length < 50 && validacion == true) {
+
+        numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
         arrayReserva.push(new Reserva(clase = arrayClases[0],
-            alumno = new Alumnos(nombre = document.querySelector("#name").value,
-                apellido = document.querySelector("#apellido").value,
-                dni = parseInt(document.querySelector("#dni").value),
-                mail = document.querySelector("#email").value,
-                tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva));
+            alumno = new Alumnos(nombre = input1, apellido = input2,
+                dni = input3, mail = input4, tel = input5), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
 
         arrayAlumnos.push(alumno);
 
     } else {
-        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
+        $('.alertaClaseCompleta').css('display', 'block');
 
     };
 
-
-    console.table(arrayAlumnos);
+    //console.table(arrayAlumnos);
 
     console.table(arrayReserva);
+    console.table(yogaMartes);
 
     /*console.log(sumarDias(fechaDeClase, +7));
-    console.log(sumarDias(fechaDeClase, +15));*/
+    console.log(sumarDias(fechaDeClase, +14));*/
 
-    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+    let reserva = JSON.stringify(arrayReserva);
 
     console.log(reserva);
 
@@ -133,36 +230,41 @@ $(".yM").click(function() {
 $(".yJ").click(function() {
 
     str = document.querySelector("#fechaClase").value;
-    console.log(str);
+    //console.log(str);
 
-    if (arrayReserva.length < 50) {
+    var yogaJueves = arrayReserva.filter(function(reservar) {
+        return reservar.clase.nombre === 'Yoga Fusion Jueves';
+    });
 
-        numeroDeReserva = (numeroDeReserva + 1);
+    //console.log(yogaJueves);
+
+    if (yogaJueves.length < 50 && validacion == true) {
+
+        numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
         arrayReserva.push(new Reserva(clase = arrayClases[1],
-            alumno = new Alumnos(nombre = document.querySelector("#name").value,
-                apellido = document.querySelector("#apellido").value,
+            alumno = new Alumnos(nombre = document.querySelector("#name").value.toLowerCase(),
+                apellido = document.querySelector("#apellido").value.toLowerCase(),
                 dni = parseInt(document.querySelector("#dni").value),
-                mail = document.querySelector("#email").value,
+                mail = document.querySelector("#email").value.toLowerCase(),
                 tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva
-        ));
+            ), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
+
 
         arrayAlumnos.push(alumno);
 
     } else {
-        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
+        $('.alertaClaseCompleta').css('display', 'block');
     };
 
-
-    console.table(arrayAlumnos);
+    //console.table(arrayAlumnos);
 
     console.table(arrayReserva);
 
     /*console.log(sumarDias(fechaDeClase, +7));
     console.log(sumarDias(fechaDeClase, +15));*/
 
-    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+    let reserva = JSON.stringify(arrayReserva);
 
     console.log(reserva);
 
@@ -173,26 +275,31 @@ $(".yY").click(function() {
     str = document.querySelector("#fechaClase").value;
     console.log(str);
 
-    if (arrayReserva.length < 50) {
+    var yogaYin = arrayReserva.filter(function(reservar) {
+        return reservar.clase.nombre === 'Yin Yoga';
+    });
 
-        numeroDeReserva = (numeroDeReserva + 1);
+    //console.log(yogaYin);
+
+    if (yogaYin.length < 50 && validacion == true) {
+
+        numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
         arrayReserva.push(new Reserva(clase = arrayClases[2],
-            alumno = new Alumnos(nombre = document.querySelector("#name").value,
-                apellido = document.querySelector("#apellido").value,
+            alumno = new Alumnos(nombre = document.querySelector("#name").value.toLowerCase(),
+                apellido = document.querySelector("#apellido").value.toLowerCase(),
                 dni = parseInt(document.querySelector("#dni").value),
-                mail = document.querySelector("#email").value,
+                mail = document.querySelector("#email").value.toLowerCase(),
                 tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva
-        ));
+            ), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
+
 
         arrayAlumnos.push(alumno);
 
     } else {
-        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
+        $('.alertaClaseCompleta').css('display', 'block');
 
     };
-
 
     console.table(arrayAlumnos);
 
@@ -201,7 +308,7 @@ $(".yY").click(function() {
     /*console.log(sumarDias(fechaDeClase, +7));
     console.log(sumarDias(fechaDeClase, +15));*/
 
-    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+    let reserva = JSON.stringify(arrayReserva);
 
     console.log(reserva);
 
@@ -210,39 +317,42 @@ $(".yY").click(function() {
 $(".cY").click(function() {
 
     str = document.querySelector("#fechaClase").value;
-    console.log(str);
+    //console.log(str);
 
-    if (arrayReserva.length < 10) {
+    var camYoga = arrayReserva.filter(function(reservar) {
+        return reservar.clase.nombre === 'Caminata + Yoga';
+    });
 
-        numeroDeReserva = (numeroDeReserva + 1);
+    //console.log(camYoga);
+
+    if (camYoga.length < 10 && validacion == true) {
+
+        numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
         arrayReserva.push(new Reserva(clase = arrayClases[3],
-            alumno = new Alumnos(nombre = document.querySelector("#name").value,
-                apellido = document.querySelector("#apellido").value,
+            alumno = new Alumnos(nombre = document.querySelector("#name").value.toLowerCase(),
+                apellido = document.querySelector("#apellido").value.toLowerCase(),
                 dni = parseInt(document.querySelector("#dni").value),
-                mail = document.querySelector("#email").value,
+                mail = document.querySelector("#email").value.toLowerCase(),
                 tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva
-        ));
+            ), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
+
 
         arrayAlumnos.push(alumno);
 
     } else {
-        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera");
+        $('.alertaClaseCompleta').css('display', 'block');
 
     };
 
-
-    console.table(arrayAlumnos);
-
-    console.log(fechaClase);
+    //console.table(arrayAlumnos);
 
     console.table(arrayReserva);
 
     /*console.log(sumarDias(fechaDeClase, +7));
     console.log(sumarDias(fechaDeClase, +15));*/
 
-    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+    let reserva = JSON.stringify(arrayReserva);
 
     console.log(reserva);
 
@@ -252,36 +362,42 @@ $(".cY").click(function() {
 $(".zR").click(function() {
 
     str = document.querySelector("#fechaClase").value;
-    console.log(str);
+    //console.log(str);
 
-    if (arrayReserva.length < 50) {
+    var zumRel = arrayReserva.filter(function(reservar) {
+        return reservar.clase.nombre === 'Zumba + Relax';
+    });
 
-        numeroDeReserva = (numeroDeReserva + 1);
+    //console.log(zumRel);
+
+    if (zumRel.length < 50 && validacion == true) {
+
+        numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
         arrayReserva.push(new Reserva(clase = arrayClases[4],
-            alumno = new Alumnos(nombre = document.querySelector("#name"),
-                apellido = document.querySelector("#apellido"),
-                dni = parseInt(document.querySelector("#dni")),
-                mail = document.querySelector("#email"),
-                tel = parseInt(document.querySelector("#tel"))
-            ), fechaDeReserva = new Date(), fechaDeClase = sumarDias(new Date(str), +1), numeroReserva = numeroDeReserva
-        ));
+            alumno = new Alumnos(nombre = document.querySelector("#name").value.toLowerCase(),
+                apellido = document.querySelector("#apellido").value.toLowerCase(),
+                dni = parseInt(document.querySelector("#dni").value),
+                mail = document.querySelector("#email").value.toLowerCase(),
+                tel = parseInt(document.querySelector("#tel").value)
+            ), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
+
 
         arrayAlumnos.push(alumno);
 
     } else {
-        alert("La Clase está completa, elija otra o escribame directamente para la lista de espera desde el formulario de contacto");
+        $('.alertaClaseCompleta').css('display', 'block');
 
     };
 
-    console.table(arrayAlumnos);
+    //console.table(arrayAlumnos);
 
     console.table(arrayReserva);
 
     /*console.log(sumarDias(fechaDeClase, +7));
     console.log(sumarDias(fechaDeClase, +15));*/
 
-    let reserva = JSON.stringify(arrayReserva); //me imprime mal la fechaDeClase
+    let reserva = JSON.stringify(arrayReserva);
 
     console.log(reserva);
 
