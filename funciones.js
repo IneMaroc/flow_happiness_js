@@ -209,7 +209,7 @@ $(".yM").click(function() {
         arrayAlumnos.push(alumno);
 
         $('.reservaExitosa').css('display', 'block');
-        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
+        alert("Su número de reserva para Yoga Fusión Martes es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
@@ -267,7 +267,7 @@ $(".yJ").click(function() {
 
         arrayAlumnos.push(alumno);
         $('.reservaExitosa').css('display', 'block');
-        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
+        alert("Su número de reserva para Yoga Fusión Jueves es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
@@ -324,7 +324,7 @@ $(".yY").click(function() {
         arrayAlumnos.push(alumno);
 
         $('.reservaExitosa').css('display', 'block');
-        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
+        alert("Su número de reserva para Yin Yoga es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
@@ -382,7 +382,7 @@ $(".cY").click(function() {
 
         arrayAlumnos.push(alumno);
         $('.reservaExitosa').css('display', 'block');
-        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
+        alert("Su número de reserva para Caminata + Yoga es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
@@ -442,7 +442,7 @@ $(".zR").click(function() {
 
         $('.reservaExitosa').css('display', 'block');
 
-        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
+        alert("Su número de reserva para Zumba + relax es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
