@@ -208,8 +208,12 @@ $(".yM").click(function() {
 
         arrayAlumnos.push(alumno);
 
+        $('.reservaExitosa').css('display', 'block');
+        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
+
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
+        $('.reservaExitosa').css('display', 'none');
 
     };
 
@@ -229,6 +233,20 @@ $(".yM").click(function() {
 
 $(".yJ").click(function() {
 
+    $('.alertaClaseCompleta').css('display', 'none');
+
+    input1 = document.querySelector("#name").value.toLowerCase();
+    input2 = document.querySelector("#apellido").value.toLowerCase();
+    input3 = parseInt(document.querySelector("#dni").value);
+    input4 = document.querySelector("#email").value.toLowerCase();
+    input5 = parseInt(document.querySelector("#tel").value);
+
+    validarNombre(input1);
+    validarApellido(input2);
+    validarDocumento(input3);
+    validarCorreo(input4);
+    validarTelefono(input5);
+
     str = document.querySelector("#fechaClase").value;
     //console.log(str);
 
@@ -243,18 +261,17 @@ $(".yJ").click(function() {
         numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
         arrayReserva.push(new Reserva(clase = arrayClases[1],
-            alumno = new Alumnos(nombre = document.querySelector("#name").value.toLowerCase(),
-                apellido = document.querySelector("#apellido").value.toLowerCase(),
-                dni = parseInt(document.querySelector("#dni").value),
-                mail = document.querySelector("#email").value.toLowerCase(),
-                tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
+            alumno = new Alumnos(nombre = input1, apellido = input2,
+                dni = input3, mail = input4, tel = input5), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
 
 
         arrayAlumnos.push(alumno);
+        $('.reservaExitosa').css('display', 'block');
+        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
+        $('.reservaExitosa').css('display', 'none');
     };
 
     //console.table(arrayAlumnos);
@@ -272,6 +289,20 @@ $(".yJ").click(function() {
 
 $(".yY").click(function() {
 
+    $('.alertaClaseCompleta').css('display', 'none');
+
+    input1 = document.querySelector("#name").value.toLowerCase();
+    input2 = document.querySelector("#apellido").value.toLowerCase();
+    input3 = parseInt(document.querySelector("#dni").value);
+    input4 = document.querySelector("#email").value.toLowerCase();
+    input5 = parseInt(document.querySelector("#tel").value);
+
+    validarNombre(input1);
+    validarApellido(input2);
+    validarDocumento(input3);
+    validarCorreo(input4);
+    validarTelefono(input5);
+
     str = document.querySelector("#fechaClase").value;
     console.log(str);
 
@@ -286,18 +317,18 @@ $(".yY").click(function() {
         numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
         arrayReserva.push(new Reserva(clase = arrayClases[2],
-            alumno = new Alumnos(nombre = document.querySelector("#name").value.toLowerCase(),
-                apellido = document.querySelector("#apellido").value.toLowerCase(),
-                dni = parseInt(document.querySelector("#dni").value),
-                mail = document.querySelector("#email").value.toLowerCase(),
-                tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
+            alumno = new Alumnos(nombre = input1, apellido = input2,
+                dni = input3, mail = input4, tel = input5), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
 
 
         arrayAlumnos.push(alumno);
 
+        $('.reservaExitosa').css('display', 'block');
+        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
+
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
+        $('.reservaExitosa').css('display', 'none');
 
     };
 
@@ -316,6 +347,20 @@ $(".yY").click(function() {
 
 $(".cY").click(function() {
 
+    $('.alertaClaseCompleta').css('display', 'none');
+
+    input1 = document.querySelector("#name").value.toLowerCase();
+    input2 = document.querySelector("#apellido").value.toLowerCase();
+    input3 = parseInt(document.querySelector("#dni").value);
+    input4 = document.querySelector("#email").value.toLowerCase();
+    input5 = parseInt(document.querySelector("#tel").value);
+
+    validarNombre(input1);
+    validarApellido(input2);
+    validarDocumento(input3);
+    validarCorreo(input4);
+    validarTelefono(input5);
+
     str = document.querySelector("#fechaClase").value;
     //console.log(str);
 
@@ -327,21 +372,21 @@ $(".cY").click(function() {
 
     if (camYoga.length < 10 && validacion == true) {
 
+
         numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
         arrayReserva.push(new Reserva(clase = arrayClases[3],
-            alumno = new Alumnos(nombre = document.querySelector("#name").value.toLowerCase(),
-                apellido = document.querySelector("#apellido").value.toLowerCase(),
-                dni = parseInt(document.querySelector("#dni").value),
-                mail = document.querySelector("#email").value.toLowerCase(),
-                tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
+            alumno = new Alumnos(nombre = input1, apellido = input2,
+                dni = input3, mail = input4, tel = input5), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
 
 
         arrayAlumnos.push(alumno);
+        $('.reservaExitosa').css('display', 'block');
+        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
+        $('.reservaExitosa').css('display', 'none');
 
     };
 
@@ -361,6 +406,20 @@ $(".cY").click(function() {
 
 $(".zR").click(function() {
 
+    $('.alertaClaseCompleta').css('display', 'none');
+
+    input1 = document.querySelector("#name").value.toLowerCase();
+    input2 = document.querySelector("#apellido").value.toLowerCase();
+    input3 = parseInt(document.querySelector("#dni").value);
+    input4 = document.querySelector("#email").value.toLowerCase();
+    input5 = parseInt(document.querySelector("#tel").value);
+
+    validarNombre(input1);
+    validarApellido(input2);
+    validarDocumento(input3);
+    validarCorreo(input4);
+    validarTelefono(input5);
+
     str = document.querySelector("#fechaClase").value;
     //console.log(str);
 
@@ -375,18 +434,19 @@ $(".zR").click(function() {
         numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
         arrayReserva.push(new Reserva(clase = arrayClases[4],
-            alumno = new Alumnos(nombre = document.querySelector("#name").value.toLowerCase(),
-                apellido = document.querySelector("#apellido").value.toLowerCase(),
-                dni = parseInt(document.querySelector("#dni").value),
-                mail = document.querySelector("#email").value.toLowerCase(),
-                tel = parseInt(document.querySelector("#tel").value)
-            ), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
+            alumno = new Alumnos(nombre = input1, apellido = input2,
+                dni = input3, mail = input4, tel = input5), fechaDeReserva = new Date(), fechaDeClase = str, numeroReservaDiario = numeroDeReservaDiario));
 
 
         arrayAlumnos.push(alumno);
 
+        $('.reservaExitosa').css('display', 'block');
+
+        alert("Su número de reserva es " + " " + numeroReservaDiario + " " + fechaDeClase);
+
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
+        $('.reservaExitosa').css('display', 'none');
 
     };
 
