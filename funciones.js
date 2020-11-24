@@ -212,11 +212,7 @@ $(".yM").click(function() {
         $('.reservaExitosa').text('Tu número de reserva para Yoga Fusión Martes es ' + numeroReservaDiario + ' para el día ' + fechaDeClase + '. ¡Qué disfrutes la Clase!');
 
         $('.reservaExitosa').css('display', 'block');
-<<<<<<< HEAD
-        alert("Su número de reserva para Yoga Fusión Martes es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
-=======
 
->>>>>>> secundaria
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
@@ -277,10 +273,6 @@ $(".yJ").click(function() {
         $('.reservaExitosa').text('Tu número de reserva para Yoga Fusión Jueves es ' + numeroReservaDiario + ' para el día ' + fechaDeClase + '. ¡Qué disfrutes la Clase!');
 
         $('.reservaExitosa').css('display', 'block');
-<<<<<<< HEAD
-        alert("Su número de reserva para Yoga Fusión Jueves es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
-=======
->>>>>>> secundaria
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
@@ -339,10 +331,6 @@ $(".yY").click(function() {
         $('.reservaExitosa').text('Tu número de reserva para Yin Yoga es ' + numeroReservaDiario + ' para el día ' + fechaDeClase + '. ¡Qué disfrutes la Clase!');
 
         $('.reservaExitosa').css('display', 'block');
-<<<<<<< HEAD
-        alert("Su número de reserva para Yin Yoga es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
-=======
->>>>>>> secundaria
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
@@ -403,10 +391,6 @@ $(".cY").click(function() {
         $('.reservaExitosa').text('Tu número de reserva para Caminata + Yoga es ' + numeroReservaDiario + ' para el día ' + fechaDeClase + '. ¡Qué disfrutes la Clase!');
 
         $('.reservaExitosa').css('display', 'block');
-<<<<<<< HEAD
-        alert("Su número de reserva para Caminata + Yoga es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
-=======
->>>>>>> secundaria
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
@@ -468,10 +452,6 @@ $(".zR").click(function() {
 
         $('.reservaExitosa').css('display', 'block');
 
-<<<<<<< HEAD
-        alert("Su número de reserva para Zumba + relax es" + " " + numeroReservaDiario + " para el día " + fechaDeClase);
-=======
->>>>>>> secundaria
 
     } else {
         $('.alertaClaseCompleta').css('display', 'block');
