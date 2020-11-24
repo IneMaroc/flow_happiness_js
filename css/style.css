@@ -173,13 +173,17 @@ header {
           box-sizing: border-box;
           background-color: #d6d3d3;
           text-align: center; }
-        #myModal .content .reserva__contenedor #formulario .alertaClaseCompleta {
-          display: none;
+        #myModal .content .reserva__contenedor #formulario .alertaClases {
           width: 100%;
           height: 2em;
+          font-weight: 800;
           text-align: center;
           padding: 0.5em;
           color: #7F52EF; }
+          #myModal .content .reserva__contenedor #formulario .alertaClases .alertaClaseCompleta {
+            display: none; }
+          #myModal .content .reserva__contenedor #formulario .alertaClases .reservaExitosa {
+            display: none; }
         #myModal .content .reserva__contenedor #formulario #btnsClases {
           width: 90%;
           display: flex;
@@ -204,6 +208,7 @@ header {
           display: flex;
           justify-content: space-evenly; }
         #myModal .content .reserva__contenedor #formulario #btFin > .bt {
+          display: none;
           align: center;
           font-weight: bold;
           background-color: #7F52EF;
