@@ -21,15 +21,6 @@ $('.modalMask').click(function(event) {
 
 //CONTENIDO MODAL
 
-//Constructor Clases
-function Clases(nombre, dia, hora, vacantes, precio) {
-    this.nombre = nombre;
-    this.dia = dia;
-    this.hora = hora;
-    this.vacantes = vacantes;
-    this.precio = precio;
-};
-
 //constructor Alumnos
 function Alumnos(nombre, apellido, dni, mail, tel) {
     this.nombre = nombre;
@@ -59,17 +50,6 @@ var arrayAlumnos = [];
 
 var arrayReserva = [];
 
-//Variables Clases predefinidas
-var clase1 = new Clases("Yoga Fusion Martes", "Martes", "19 a 20:30", 50, 500);
-var clase2 = new Clases("Yoga Fusion Jueves", "Jueves", "19 a 20:30", 50, 500);
-var clase3 = new Clases("Yin Yoga", "Miércoles", "19 a 20:30", 50, 500);
-var clase4 = new Clases("Caminata + Yoga", "Sábados", "10 a 11:30", 10, 500);
-var clase5 = new Clases("Zumba + Relax", "Lunes", "19 a 20:30", 50, 500);
-
-arrayClases.push(clase1, clase2, clase3, clase4, clase5);
-
-console.table(arrayClases);
-
 // variables alumno
 var alumno = [];
 var nombre = "";
@@ -77,7 +57,6 @@ var apellido = "";
 var dni = 0;
 var mail = "";
 var tel = 0;
-
 
 // variables fechas
 
@@ -170,6 +149,26 @@ function validarTelefono(valor) {
     }
 };
 
+//EVENTOS
+
+$(document).ready(function() {
+    $.ajax({
+            url: "clases.json", //dirección del servidor
+            type: "GET", //tipo de solicitud
+            dataType: "json" //tipo de dato
+        }).done(function(resultado) { //callback con ejecución correcta
+            arrayClases = resultado;
+            console.table(arrayClases);
+
+        })
+        .fail(function(xhr, status, error) { //callback con ejecución con error
+            console.log(xhr);
+            console.log(status);
+            console.log(error);
+        })
+
+});
+
 
 //funciones reserva
 
@@ -223,7 +222,6 @@ $(".yM").click(function() {
     //console.table(arrayAlumnos);
 
     console.table(arrayReserva);
-    console.table(yogaMartes);
 
     /*console.log(sumarDias(fechaDeClase, +7));
     console.log(sumarDias(fechaDeClase, +14));*/
@@ -471,5 +469,3 @@ $(".zR").click(function() {
     console.log(reserva);
 
 });
-
-console.log(JSON.stringify(arrayClases));
