@@ -1,4 +1,4 @@
-//MODALRESERVA 
+//MODALRESERVA apertura
 
 $('#myBtn').click(function(event) {
     $('#myModal').css('display', 'block');
@@ -21,7 +21,7 @@ $('.modalMask').click(function(event) {
 
 //CONTENIDO MODAL
 
-//constructor Alumnos
+//constructores
 function Alumnos(nombre, apellido, dni, mail, tel) {
     this.nombre = nombre;
     this.apellido = apellido;
@@ -30,7 +30,7 @@ function Alumnos(nombre, apellido, dni, mail, tel) {
     this.tel = tel;
 };
 
-//constructor Reserva
+
 function Reserva(clase, alumno, fechaDeReserva, fechaDeClase, numeroReservaDiario) {
     this.clase = clase;
     this.alumno = alumno;
@@ -62,17 +62,7 @@ var tel = 0;
 
 var str = "18/10/2020";
 
-//funciones fechas
-
-function sumarDias(fecha, dias) {
-    fecha.setDate(fecha.getDate() + dias);
-    return fecha;
-};
-
-//funcion localStorage
-
-
-//funciones validacion formulario
+// variables validacion
 
 var input1 = "";
 var input2 = "";
@@ -81,32 +71,49 @@ var input4 = "";
 var input5 = 0;
 
 
-var validacion = false;
+var validacionNombre = false;
+var validacionApellido = false;
+var validacionDocumento = false;
+var validacionCorreo = false;
+var validacionTelefono = false;
+
+//funciones fechas
+
+function sumarDias(fecha, dias) {
+    fecha.setDate(fecha.getDate() + dias);
+    return fecha;
+};
+
+//funcion SessionStorage
+
+
+//funciones validacion formulario
+
 
 function validarNombre(valor) {
 
-    if (valor == null || valor.length == 0) {
+    if (valor == null || valor.length == 0 || !(isNaN(valor))) {
 
         console.log("No dejar en blanco");
         $('.alertaNombre').css('display', 'block');
 
-        return validacion = false;
+        return validacionNombre = false;
     } else {
         $('.alertaNombre').css('display', 'none');
-        return validacion = true;
+        return validacionNombre = true;
     }
 };
 
 function validarApellido(valor) {
 
-    if (valor == null || valor.length == 0) {
+    if (valor == null || valor.length == 0 || !(isNaN(valor))) {
 
         console.log("No dejar en blanco");
         $('.alertaApellido').css('display', 'block');
-        return validacion = false;
+        return validacionApellido = false;
     } else {
         $('.alertaApellido').css('display', 'none');
-        return validacion = true;
+        return validacionApellido = true;
     }
 };
 
@@ -115,10 +122,10 @@ function validarDocumento(valor) {
     if (valor == null || valor.length == 0 || (isNaN(valor))) {
         console.log("No dejar en blanco, escribir solo números");
         $('.alertaDocumento').css('display', 'block');
-        return validacion = false;
+        return validacionDocumento = false;
     } else {
         $('.alertaDocumento').css('display', 'none');
-        return validacion = true;
+        return validacionDocumento = true;
 
     }
 };
@@ -129,10 +136,10 @@ function validarCorreo(valor) {
 
         console.log("No has ingresado tu mail o el formato no es correcto");
         $('.alertaCorreo').css('display', 'block');
-        return validacion = false;
+        return validacionCorreo = false;
     } else {
         $('.alertaCorreo').css('display', 'none');
-        return validacion = true;
+        return validacionCorreo = true;
     }
 };
 
@@ -142,10 +149,10 @@ function validarTelefono(valor) {
         console.log("No dejar en blanco, escribir solo números");
         $('.alertaTelefono').css('display', 'block');
         $('#tel').css('border', 'solid $especialv1');
-        return validacion = false;
+        return validacionTelefono = false;
     } else {
         $('.alertaTelefono').css('display', 'none');
-        return validacion = true;
+        return validacionTelefono = true;
     }
 };
 
@@ -182,11 +189,13 @@ $(".yM").click(function() {
     input4 = document.querySelector("#email").value.toLowerCase();
     input5 = parseInt(document.querySelector("#tel").value);
 
+
     validarNombre(input1);
     validarApellido(input2);
     validarDocumento(input3);
     validarCorreo(input4);
     validarTelefono(input5);
+
 
 
     str = document.querySelector("#fechaClase").value;
@@ -197,7 +206,7 @@ $(".yM").click(function() {
     });
     //console.log(yogaMartes);
 
-    if (yogaMartes.length < 50 && validacion == true) {
+    if (yogaMartes.length < 50 && validacionNombre == true && validacionApellido == true && validacionDocumento == true && validacionCorreo == true && validacionTelefono == true) {
 
         numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
@@ -257,7 +266,7 @@ $(".yJ").click(function() {
 
     //console.log(yogaJueves);
 
-    if (yogaJueves.length < 50 && validacion == true) {
+    if (yogaJueves.length < 50 && validacionNombre == true && validacionApellido == true && validacionDocumento == true && validacionCorreo == true && validacionTelefono == true) {
 
         numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
@@ -315,7 +324,7 @@ $(".yY").click(function() {
 
     //console.log(yogaYin);
 
-    if (yogaYin.length < 50 && validacion == true) {
+    if (yogaYin.length < 50 && validacionNombre == true && validacionApellido == true && validacionDocumento == true && validacionCorreo == true && validacionTelefono == true) {
 
         numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
@@ -374,7 +383,7 @@ $(".cY").click(function() {
 
     //console.log(camYoga);
 
-    if (camYoga.length < 10 && validacion == true) {
+    if (camYoga.length < 10 && validacionNombre == true && validacionApellido == true && validacionDocumento == true && validacionCorreo == true && validacionTelefono == true) {
 
 
         numeroDeReservaDiario = (numeroDeReservaDiario + 1);
@@ -435,7 +444,7 @@ $(".zR").click(function() {
 
     //console.log(zumRel);
 
-    if (zumRel.length < 50 && validacion == true) {
+    if (zumRel.length < 50 && validacionNombre == true && validacionApellido == true && validacionDocumento == true && validacionCorreo == true && validacionTelefono == true) {
 
         numeroDeReservaDiario = (numeroDeReservaDiario + 1);
 
