@@ -1,0 +1,36 @@
+[{
+        "nombre": "Yoga Fusion Martes",
+        "dia": "Martes",
+        "hora": "19 a 20:30",
+        "vacantes": 50,
+        "precio": 500
+    },
+    {
+        "nombre": "Yoga Fusion Jueves",
+        "dia": "Jueves",
+        "hora": "19 a 20:30",
+        "vacantes": 50,
+        "precio": 500
+    },
+    {
+        "nombre": "Yin Yoga",
+        "dia": "Miércoles",
+        "hora": "19 a 20:30",
+        "vacantes": 50,
+        "precio": 500
+    },
+    {
+        "nombre": "Caminata + Yoga",
+        "dia": "Sábados",
+        "hora": "10 a 11:30",
+        "vacantes": 10,
+        "precio": 500
+    },
+    {
+        "nombre": "Zumba + Relax",
+        "dia": "Lunes",
+        "hora": "19 a 20:30",
+        "vacantes": 50,
+        "precio": 500
+    }
+]
